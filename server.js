@@ -30,7 +30,7 @@ app.get("/notes", function (req, res) {
 });
 
 // //   * GET `*` - Should return the `index.html` file
-app.get("/0", function (req, res) {
+app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
@@ -42,8 +42,8 @@ console.log(db);
 // * The following API routes should be created:
 
 //   * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
-app.get("/apinotes", function (req, res) {
-  // res.sendFile(path.join(__dirname, "view.html"));
+app.get("/api/notes", function (req, res) {
+  return db;
 });
 
 //   * POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
@@ -52,7 +52,6 @@ app.get("/apinotes", function (req, res) {
 
 //reservations === GET/reservation html then POST
 
-//SETUP LISTENER ON SERVER
 // Starts the server to begin listening====================
 app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);

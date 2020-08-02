@@ -1,7 +1,7 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "app that helps you write, save, and delete notes.",
   "main": "server.js",
   "dependencies": {
     "express": "^4.17.1"
@@ -14,6 +14,6 @@
     "start": "node server.js",
     "watch": "nodemon server.js"
   },
-  "author": "",
+  "author": "Gabriel Caplan",
   "license": "ISC"
 }
