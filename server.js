@@ -10,23 +10,29 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // // Sets up the Express app to handle data parsing========================
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// //OBJECT ARRAY TO STORE DATA=========
-// var reservations = [
-//   {
-//     routeName: "tk",
-//     name: "tk",
-//   },
-// ];
+//OBJECT ARRAY TO STORE DATA=========
+var reservations = [
+  {
+    routeName: "tk",
+    name: "tk",
+  },
+];
 
 //SETUP ROUTES
 // // * The following HTML routes should be created:
 
 // //   * GET `/notes` - Should return the `notes.html` file.
+app.get("/notes", function (req, res) {
+  res.sendFile(path.join(__dirname, "develop/public/notes.html"));
+});
 
 // //   * GET `*` - Should return the `index.html` file
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 
 // The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
 
