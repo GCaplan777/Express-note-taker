@@ -30,8 +30,8 @@ app.get("/notes", function (req, res) {
 });
 
 // //   * GET `*` - Should return the `index.html` file
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
+app.get("/0", function (req, res) {
+  res.sendFile(path.join(__dirname, "develop/public/index.html"));
 });
 
 // The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
