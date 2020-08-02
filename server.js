@@ -4,6 +4,7 @@
 var express = require("express");
 var path = require("path");
 var fs = require("fs");
+const { v4: uuid } = require("uuid");
 
 // Sets up the Express App=======
 var app = express();
@@ -41,6 +42,7 @@ app.post("/api/notes", function (req, res) {
   let rawdata = fs.readFileSync("db/db.json");
   let db = JSON.parse(rawdata);
   var newNote = req.body;
+  newNote.id = uuid();
   console.log(newNote);
   db.push(newNote);
   fs.writeFileSync("db/db.json", JSON.stringify(db));
@@ -48,6 +50,10 @@ app.post("/api/notes", function (req, res) {
 });
 
 //   * DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+
+// app.delete("/api/notes/:id", function (req, res){
+//   var deletedPost = req.params.id;
+// }
 
 // Starts the server to begin listening====================
 app.listen(PORT, function () {
