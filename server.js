@@ -15,15 +15,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //OBJECT ARRAY TO STORE DATA=========
-var reservations = [
-  {
-    routeName: "tk",
-    name: "tk",
-  },
-];
+// var notes = [
+//   {
+//     routeName: "tk",
+//     name: "tk",
+//   },
+// ];
 
-//SETUP ROUTES
-// // * The following HTML routes should be created:
+// HTLM ROUTES
 
 // //   * GET `/notes` - Should return the `notes.html` file.
 app.get("/notes", function (req, res) {
@@ -36,10 +35,16 @@ app.get("/0", function (req, res) {
 });
 
 // The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
+let rawdata = fs.readFileSync("db/db.json");
+let db = JSON.parse(rawdata);
+console.log(db);
 
 // * The following API routes should be created:
 
 //   * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
+app.get("/apinotes", function (req, res) {
+  // res.sendFile(path.join(__dirname, "view.html"));
+});
 
 //   * POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
 
