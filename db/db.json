@@ -1,8 +1,1 @@
-[
-  { "title": "Test Title", "text": "Test text" },
-  {
-    "title": "Eat french fries",
-    "text": "don't let Kaori see",
-    "id": "f1cc795d-570c-41f6-b637-67b6cb6b16d4"
-  }
-]
+[{"title":"Test Title","text":"Test text"},{"title":"eat","text":"yum","id":"366a375f-192a-4454-9dbb-b4e8968947fb"}]
