@@ -3,6 +3,7 @@
 // Dependencie===========
 var express = require("express");
 var path = require("path");
+var fs = require("fs");
 
 // Sets up the Express App=======
 var app = express();
@@ -26,12 +27,12 @@ var reservations = [
 
 // //   * GET `/notes` - Should return the `notes.html` file.
 app.get("/notes", function (req, res) {
-  res.sendFile(path.join(__dirname, "develop/public/notes.html"));
+  res.sendFile(path.join(__dirname, "public/notes.html"));
 });
 
 // //   * GET `*` - Should return the `index.html` file
 app.get("/0", function (req, res) {
-  res.sendFile(path.join(__dirname, "develop/public/index.html"));
+  res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 // The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
