@@ -4,7 +4,7 @@
   "description": "app that helps you write, save, and delete notes.",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "uuid": "^8.3.0"
   },
   "devDependencies": {
